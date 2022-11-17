@@ -1,0 +1,46 @@
+.home {
+  padding: 0 1.6em;
+}
+
+.bckg-img,
+.slight-opacity {
+  border-radius: 10px;
+  width: 100%;
+  height: 111px;
+}
+
+.bckg-img {
+  background-image: url('../images/background_image_home_mobile.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.slight-opacity {
+  background: #000;
+  opacity: 0.3;
+}
+
+.bckg-img span {
+  position: absolute;
+  top: 13.5%;
+  left: 10%;
+  width: 212px;
+  font-size: 2em;
+  font-weight: 500;
+  line-height: 100%;
+  color: #fff;
+  letter-spacing: 0.05em;
+}
+
+.bckg-img,
+.locations-list {
+  margin-bottom: 1.5em;
+}
+
+.locations-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5em;
+}

@@ -1,0 +1,18 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.6em;
+}
+
+.navlinks {
+  display: flex;
+  gap: 1em;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.navlinks a {
+  color: #FF6060;
+  text-transform: uppercase
+}
