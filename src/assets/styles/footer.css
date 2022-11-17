@@ -7,12 +7,28 @@
   gap: 1em;
   background-color: #000;
   color: #fff;
+  line-height: 17px;
 }
 
 .footer span {
-  font-size: 12px;
+  font-size: 1em;
 }
 
 .footer img {
   filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(63deg) brightness(102%) contrast(102%);
+}
+
+/* Tablet */
+@media screen and (min-width: 727px) {}
+
+/* Desktop */
+@media screen and (min-width: 1080px) {
+  .footer {
+    gap: 2em;
+    line-height: 34px;
+  }
+
+  .footer span {
+    font-size: 2em;
+  }
 }

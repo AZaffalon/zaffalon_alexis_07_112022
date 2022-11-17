@@ -7,9 +7,9 @@ function Home() {
     <main className="home">
       <div className="bckg-img">
         <div className="slight-opacity"></div>
-        <span>Chez vous, partout et ailleurs</span>
+        <div className="slogan">Chez vous, partout et ailleurs</div>
       </div>
-      <section className="locations-list">
+      <section className="locations-list background--grey">
         <LocationCard />
         <LocationCard />
         <LocationCard />

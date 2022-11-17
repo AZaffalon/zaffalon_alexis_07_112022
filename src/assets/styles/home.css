@@ -6,7 +6,9 @@
 .slight-opacity {
   border-radius: 10px;
   width: 100%;
+  max-width: 1240px;
   height: 111px;
+  margin: 0 auto;
 }
 
 .bckg-img {
@@ -21,10 +23,10 @@
   opacity: 0.3;
 }
 
-.bckg-img span {
-  position: absolute;
-  top: 13.5%;
-  left: 10%;
+.slogan {
+  position: relative;
+  top: -70%;
+  left: 6%;
   width: 212px;
   font-size: 2em;
   font-weight: 500;
@@ -43,4 +45,37 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 1.5em;
+  max-width: 1240px;
+  margin: 0 auto;
+  margin-bottom: 1.5em;
+}
+
+/* Desktop */
+@media screen and (min-width: 1080px) {
+
+  .locations-list {
+    background-color: #F7F7F7;
+    border-radius: 25px;
+    padding: 5em 0;
+    gap: 5em;
+    margin-top: 3em;
+    margin-bottom: 3em;
+  }
+
+  .bckg-img,
+  .slight-opacity {
+    height: 224px;
+  }
+
+  .bckg-img {
+    background-image: url('../images/background_image_home_desktop.jpg');
+  }
+
+  .slogan {
+    width: 100%;
+    text-align: center;
+    left: 0;
+    font-size: 4em;
+    top: -60%;
+  }
 }
