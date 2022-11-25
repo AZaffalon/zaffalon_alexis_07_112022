@@ -1,18 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
-import router from './router';
-import { RouterProvider } from 'react-router-dom';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import App from './App'
 import './assets/styles/root.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Header />
-    <RouterProvider router= {router}/>
-    <Footer />
+    <App />
   </React.StrictMode>
 );
 
