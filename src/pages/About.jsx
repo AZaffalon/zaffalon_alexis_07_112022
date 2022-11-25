@@ -4,9 +4,9 @@ import '../assets/styles/about.css'
 
 function About() {
   return(
-    <>
+    <div className="about">
       <div className="bckg-about">
-          <div className="slight-opacity"></div>
+        <div className="slight-opacity"></div>
       </div>
 
       <main className="dropdown-list">
@@ -15,7 +15,7 @@ function About() {
         <Dropdown />
         <Dropdown />
       </main>
-    </>
+    </div>
   )
 }
 

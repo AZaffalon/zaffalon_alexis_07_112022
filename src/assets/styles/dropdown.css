@@ -1,6 +1,6 @@
 .collapse {
   max-width: 1023px;
-  width: 92%;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -24,4 +24,19 @@
 
 .arrow-up {
   transform: rotate(180deg);
+}
+
+@media screen and (min-width: 1080px) {
+
+  .collapse--header,
+  .collapse--expanded {
+    font-size: 2em;
+    font-weight: 400;
+  }
+
+  .collapse--header {
+    height: 47px;
+    padding: 0 1%;
+  }
+
 }
