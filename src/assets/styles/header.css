@@ -2,8 +2,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.6em;
   max-width: 1240px;
+  width: 92%;
+  margin: 0 auto;
 }
 
 .navlinks {
@@ -23,10 +24,6 @@
 
 /* Desktop */
 @media screen and (min-width: 1080px) {
-  .header {
-    padding: 3.2em;
-  }
-
   .navlinks {
     font-size: 2em;
   }

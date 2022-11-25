@@ -1,0 +1,21 @@
+.bckg-about {
+  background-image: url('../images/gustavo-alves-YOXSC4zRcxw-unsplash-1.png');
+  height: 223px;
+  width: 92%;
+  margin: 0 auto;
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.slight-opacity {
+  background: #000;
+  opacity: 0.3;
+  height: 100%;
+}
+
+.dropdown-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

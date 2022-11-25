@@ -1,0 +1,27 @@
+.collapse {
+  max-width: 1023px;
+  width: 92%;
+  margin: 0 auto;
+}
+
+.collapse--header {
+  background-color: #FF6060;
+  height: 30px;
+  border-radius: 5px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5px;
+}
+
+.collapse--expanded {
+  background-color: #f7f7f7;
+  color: #FF6060;
+  border-radius: 5px;
+  padding: 25px 15px;
+}
+
+.arrow-up {
+  transform: rotate(180deg);
+}
