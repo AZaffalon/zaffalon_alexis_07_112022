@@ -1,3 +1,10 @@
+.dropdown-list,
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .about {
   width: 92%;
   max-width: 1240px;
@@ -18,8 +25,16 @@
   height: 100%;
 }
 
-.dropdown-list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+@media screen and (min-width: 1080px) {
+
+  .dropdown-list,
+  .about {
+    display: flex;
+    flex-direction: column;
+    gap: 33px;
+  }
+
+  .bckg-about {
+    background-image: url('../images/gustavo-alves-YOXSC4zRcxw-unsplash-desktop.jpg');
+  }
 }
