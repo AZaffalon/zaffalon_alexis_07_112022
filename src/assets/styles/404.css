@@ -33,6 +33,7 @@
 .not-found a {
   font-size: 14px;
   margin-top: 133px;
+  margin-bottom: 235px;
 }
 
 
@@ -54,6 +55,7 @@
 
   .not-found a {
     margin-top: 182px;
+    margin-bottom: 159px;
     font-size: 18px;
   }
 }

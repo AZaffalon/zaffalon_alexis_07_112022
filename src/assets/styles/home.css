@@ -5,7 +5,6 @@
   display: flex;
   flex-direction: column;
   gap: 22px;
-  padding: 22px 0;
 }
 
 .location-link {
@@ -45,11 +44,6 @@
   letter-spacing: 0.05em;
 }
 
-.bckg-img,
-.locations-list {
-  /* margin-bottom: 1.5em; */
-}
-
 .locations-list {
   display: flex;
   flex-wrap: wrap;
@@ -64,7 +58,6 @@
 
   .home {
     gap: 43px;
-    padding-bottom: 43px 0;
   }
 
   .locations-list {
