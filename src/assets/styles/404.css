@@ -12,40 +12,48 @@
   color: #FF6060;
 }
 
-.not-found span {
+.not-found span:not(.oups span) {
   font-size: 8em;
   font-weight: 700;
   line-height: 137px;
 }
 
-.not-found p {
+.oups {
   width: 260px;
+  margin-top: 0;
   text-align: center;
+}
+
+.oups span {
+  display: block;
   font-size: 1.5em;
   line-height: 26px;
-  margin-top: 0;
 }
 
 .not-found a {
   font-size: 14px;
-  margin-top: 25%;
+  margin-top: 133px;
 }
 
 
 @media screen and (min-width: 1080px) {
-  .not-found span {
+  .not-found span:not(.oups span) {
     font-size: 24em;
     line-height: 411px;
   }
 
-  .not-found p {
+  .oups {
     width: 100%;
+  }
+
+  .oups span {
     font-size: 3em;
     line-height: 51px;
+    display: unset;
   }
 
   .not-found a {
-    margin-top: 0%;
+    margin-top: 182px;
     font-size: 18px;
   }
 }

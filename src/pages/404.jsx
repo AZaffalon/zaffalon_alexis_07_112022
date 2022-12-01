@@ -4,12 +4,15 @@ import { Link } from 'react-router-dom'
 
 function NotFound() {
   return(
-    <div className="not-found">
+    <main className="not-found">
       <span>404</span>
-      <p>Oups! La page que vous demandez n'existe pas.</p>
+      <div class="oups">
+        <span>Oups! La page que</span>
+        <span> vous demandez n'existe pas.</span> 
+      </div>
 
       <Link to="/">Retourner sur la page d’accueil</Link>
-    </div>
+    </main>
   )
 }
 
