@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import Logo from "./Logo"
 import '../assets/styles/header.css'
 
@@ -8,8 +8,8 @@ function Header() {
     <header className="header">
       <Logo />
       <nav className="navlinks">
-        <Link to="/">Accueil</Link>
-        <Link to="/About">A Propos</Link>
+        <NavLink to="/" className={({isActive}) => isActive ? "active" : undefined}>Accueil</NavLink>
+        <NavLink to="/About" className={({isActive}) => isActive ? "active" : undefined}>A Propos</NavLink>
       </nav>
     </header>
   )
