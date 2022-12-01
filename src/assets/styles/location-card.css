@@ -2,13 +2,12 @@
 .gradient {
   height: 255px;
   border-radius: 10px;
-  flex-grow: 1;
+  position: relative;
 }
 
 .location-card {
-  background-color: #FF6060;
-  width: 335px;
-  max-width: 340px;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .gradient {
@@ -17,18 +16,18 @@
 }
 
 .title {
-  position: relative;
+  position: absolute;
   font-size: 1.5em;
   font-weight: 500;
   color: #fff;
   line-height: 26px;
-  bottom: 65px;
+  bottom: 5%;
   left: 5%;
   width: 120px;
 }
 
 /* Tablet */
-@media screen and (min-width: 727px) {
+@media screen and (min-width: 761px) {
 
   .gradient,
   .location-card {

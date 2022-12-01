@@ -2,6 +2,15 @@
   width: 92%;
   max-width: 1240px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding: 22px 0;
+}
+
+.location-link {
+  width: 100%;
+  max-width: 340px;
 }
 
 .bckg-img,
@@ -45,22 +54,24 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1.5em;
+  gap: 20px;
   max-width: 1240px;
   margin: 0 auto;
-  /* margin-bottom: 1.5em; */
 }
 
 /* Desktop */
 @media screen and (min-width: 1080px) {
 
+  .home {
+    gap: 43px;
+    padding-bottom: 43px 0;
+  }
+
   .locations-list {
     background-color: #F7F7F7;
     border-radius: 25px;
-    padding: 5em 0;
-    gap: 5em;
-    /* margin-top: 3em; */
-    /* margin-bottom: 3em; */
+    padding: 56px 50px;
+    gap: 60px;
   }
 
   .bckg-img,
