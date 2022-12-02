@@ -1,10 +1,10 @@
 import React from "react";
 import '../assets/styles/tag.css'
 
-function Tag() {
+function Tag({tagValue}) {
   return(
     <div className="tag">
-      tag-name
+      {tagValue}
     </div>
   )
 }
