@@ -1,0 +1,36 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1240px;
+  width: 92%;
+  padding-top: 20px;
+  align-self: center;
+}
+
+.navlinks {
+  display: flex;
+  gap: 1em;
+  font-size: 1em;
+  font-weight: 500;
+}
+
+.navlinks a {
+  color: #FF6060;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.navlinks a.active {
+  text-decoration: underline;
+}
+
+/* Tablet */
+@media screen and (min-width: 727px) {}
+
+/* Desktop */
+@media screen and (min-width: 1080px) {
+  .navlinks {
+    font-size: 2em;
+  }
+}

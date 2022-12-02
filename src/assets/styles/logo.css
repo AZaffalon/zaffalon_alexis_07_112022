@@ -1,0 +1,9 @@
+.logo {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+}
+
+.logo__home .door {
+  transform: translate(-10px, -2px);
+}

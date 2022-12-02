@@ -1,0 +1,40 @@
+.dropdown-list,
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about {
+  width: 92%;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.bckg-about {
+  background-image: url('../images/gustavo-alves-YOXSC4zRcxw-unsplash-1.png');
+  height: 223px;
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.slight-opacity {
+  background: #000;
+  opacity: 0.3;
+  height: 100%;
+}
+
+@media screen and (min-width: 1080px) {
+
+  .dropdown-list,
+  .about {
+    display: flex;
+    flex-direction: column;
+    gap: 33px;
+  }
+
+  .bckg-about {
+    background-image: url('../images/gustavo-alves-YOXSC4zRcxw-unsplash-desktop.jpg');
+  }
+}
