@@ -10,9 +10,14 @@ import '../assets/styles/apartment.css'
 import starGrey from '../assets/images/star-grey.svg'
 import starRed from '../assets/images/star-red.svg'
 
-function Apartment() {
+/**
+ * Fetch datas from datas.json and find location with id from url params
+ * return state of setApartment (json) an setLoading (boolean)
+ */
+function setFetcherApartment() {
+  
   const params = useParams()
-
+  
   const [apartment, setApartment] = useState(null) 
   const [loading, setLoading] = useState(true)
   
@@ -26,7 +31,6 @@ function Apartment() {
       })
       .then(data => {
         setApartment(data.find(a => a.id === params.id))
-        console.log(data.find(a => a.id === params.id))
       })
       .catch(error => {
         console.error("Problem fetching data:", error)
@@ -35,10 +39,23 @@ function Apartment() {
         setLoading(false)
       })
   }, [])
+  return [
+    loading,
+    apartment
+  ]
+}
+
+function Apartment() {
+
+  // States returned from setFetcherApartment function
+  const [loading, apartment] = setFetcherApartment()
 
   if (loading) {
     return "Loading..."
   }
+
+  // Set i to 0 for tags keys
+  let i = 0;
 
   return (
     <div className="apartment">
@@ -51,7 +68,7 @@ function Apartment() {
 
           <div className="align-tags">
             { apartment.tags.map(tag => {
-                return <Tag tagValue={tag} key={`${apartment.id}_${tag}`}/>
+                return <Tag tagValue={tag} key={`${tag}_${apartment.id}`}/>
               })
             }
           </div>
@@ -61,15 +78,17 @@ function Apartment() {
           <div className="star-container grow-1">
             {
               [...Array(parseInt(apartment.rating))].map(() => {
+                i++ // increment i to 1 for each tag
                 return(
-                  <img src= {starRed} alt="Star red" />
+                  <img src= {starRed} alt="Star red" key={`star_red_${i}`}/>
                 )
               })
             }
             {
               [...Array(5 - parseInt(apartment.rating))].map(() => {
+                i++ // increment i to 1 for each tag
                 return(
-                  <img src= {starGrey} alt="Star grey" />
+                  <img src= {starGrey} alt="Star grey" key={`star_grey_${i}`}/>
                 )
               })
             }

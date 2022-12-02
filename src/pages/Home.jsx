@@ -1,12 +1,19 @@
+// React
 import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
-import '../assets/styles/home.css'
+// Components
 import LocationCard from "../components/LocationCard"
+// Styles
+import '../assets/styles/home.css'
 
-function Home() {
+/**
+ * Fetch datas from datas.json
+ * return state of setLocations (json) an setLoading (boolean)
+ */
+function setFetcher() {
   const [locations, setLocations] = useState(null) 
   const [loading, setLoading] = useState(true)
-  
+
   useEffect(() => {
     fetch("./datas.json")
       .then(response => {
@@ -25,7 +32,14 @@ function Home() {
         setLoading(false)
       })
   }, [])
+  return [ locations, loading ]
+}
 
+function Home() {
+
+  // States returned from setFetcher function
+  const [locations, loading] = setFetcher()
+  
   if (loading) {
     return "Loading..."
   }
@@ -39,9 +53,9 @@ function Home() {
       <section className="locations-list background--grey">
         { locations.map(location => {
             return (
-              <Link to={`/fiche-logement/${location.id}`} className="location-link">
+              <Link to={`/fiche-logement/${location.id}`} className="location-link" key={location.id}>
                 {
-                  <LocationCard backgroundImage={location.cover} titleValue={location.title} key={location.id}/>
+                  <LocationCard backgroundImage={location.cover} titleValue={location.title}/>
                 }
               </Link>
             )
