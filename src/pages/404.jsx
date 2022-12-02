@@ -6,7 +6,7 @@ function NotFound() {
   return(
     <main className="not-found">
       <span>404</span>
-      <div class="oups">
+      <div className="oups">
         <span>Oups! La page que</span>
         <span> vous demandez n'existe pas.</span> 
       </div>
