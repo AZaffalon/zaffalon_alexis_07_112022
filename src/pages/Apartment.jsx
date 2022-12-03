@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import Tag from "../components/Tag";
 import Dropdown from "../components/Dropdown";
 import Slider from "../components/Slider";
+import Loader from "../components/Loader";
 // Styles and images
 import '../assets/styles/apartment.css'
 import starGrey from '../assets/images/star-grey.svg'
@@ -50,8 +51,8 @@ function Apartment() {
   // States returned from setFetcherApartment function
   const [loading, apartment] = setFetcherApartment()
 
-  if (loading) {
-    return "Loading..."
+  if (loading) { // until 'loading' passes to false => show the loader component
+    return <Loader />
   }
 
   // Set i to 0 for tags keys
