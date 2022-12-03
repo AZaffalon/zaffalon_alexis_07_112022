@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 // Components
 import LocationCard from "../components/LocationCard"
+import Loader from "../components/Loader"
 // Styles
 import '../assets/styles/home.css'
 
@@ -40,8 +41,8 @@ function Home() {
   // States returned from setFetcher function
   const [locations, loading] = setFetcher()
   
-  if (loading) {
-    return "Loading..."
+  if (loading) { // until 'loading' passes to false => show the loader component
+    return <Loader />
   }
 
   return (
