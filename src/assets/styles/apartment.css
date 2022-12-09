@@ -93,8 +93,46 @@ span {
     align-items: flex-end;
   }
 
+  .container h2 {
+    font-size: 3em;
+  }
+
+  .container span {
+    font-size: 1.5em;
+  }
+
+  .place {
+    margin-bottom: 10px;
+  }
+
+  .star-container {
+    display: flex;
+    gap: 10px;
+  }
+
+  .star-container img {
+    width: 30px;
+  }
+
+  .name-picture {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .name-picture span {
+    width: 110px;
+    line-height: 26px;
+  }
+
+  .picture {
+    width: 64px;
+    height: 64px;
+  }
+
   .direction {
     flex-direction: column-reverse;
+    gap: 2em;
   }
 
   .align-dropdown {
