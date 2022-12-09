@@ -1,7 +1,10 @@
 .collapse {
   max-width: 1023px;
-  width: 100%;
   margin: 0 auto;
+}
+
+.width-100 {
+  width: 100%;
 }
 
 .collapse--header {
@@ -32,7 +35,7 @@
 
   .collapse--header,
   .collapse--expanded p {
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: 400;
     letter-spacing: 1.5px;
   }

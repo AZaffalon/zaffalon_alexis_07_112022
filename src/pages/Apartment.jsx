@@ -78,7 +78,7 @@ function Apartment() {
       <div className="container">
         <div className="wrapper column grow-1">
           <h2>{apartment.title}</h2>
-          <span>{apartment.location}</span>
+          <span className="place">{apartment.location}</span>
 
           <div className="align-tags">
             { apartment.tags.map(tag => {
@@ -118,8 +118,8 @@ function Apartment() {
       </div>
 
       <div className="align-dropdown">
-        <Dropdown titleValue={"Description"} dropContent={apartment.description}/>
-        <Dropdown titleValue={"Équipements"} dropContent={apartment.equipments}/>  
+        <Dropdown widthClass={"width-100"} titleValue={"Description"} dropContent={apartment.description}/>
+        <Dropdown widthClass={"width-100"} titleValue={"Équipements"} dropContent={apartment.equipments}/>  
       </div>
     </div>
   )

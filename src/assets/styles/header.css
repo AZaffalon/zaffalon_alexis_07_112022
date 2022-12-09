@@ -33,4 +33,10 @@
   .navlinks {
     font-size: 2em;
   }
+
+  .navlinks a {
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    font-weight: 300;
+  }
 }
