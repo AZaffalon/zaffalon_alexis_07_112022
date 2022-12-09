@@ -3,11 +3,11 @@ import '../assets/styles/dropdown.css'
 import arrow from'../assets/images/arrow.svg'
 
 
-function Dropdown({titleValue, dropContent}) {
+function Dropdown({titleValue, dropContent, widthClass}) {
   const [isOpen, setIsOpen] = useState(false)
 
   return isOpen ? (
-    <div className="collapse">
+    <div className={`collapse ${widthClass}`}>
       <div className="collapse--header" onClick={(e) => setIsOpen(false)}>
         {titleValue}
         <img src = {arrow} alt="arrow" className="arrow-up" />
@@ -19,7 +19,7 @@ function Dropdown({titleValue, dropContent}) {
       </div>
     </div>
   ) : (
-    <div className="collapse">
+    <div className={`collapse ${widthClass}`}>
       <div className="collapse--header" onClick={(e) => setIsOpen(true)}>
         {titleValue}
         <img src = {arrow} alt="arrow" />

@@ -118,8 +118,8 @@ function Apartment() {
       </div>
 
       <div className="align-dropdown">
-        <Dropdown titleValue={"Description"} dropContent={apartment.description}/>
-        <Dropdown titleValue={"Équipements"} dropContent={apartment.equipments}/>  
+        <Dropdown widthClass={"width-100"} titleValue={"Description"} dropContent={apartment.description}/>
+        <Dropdown widthClass={"width-100"} titleValue={"Équipements"} dropContent={apartment.equipments}/>  
       </div>
     </div>
   )
