@@ -22,12 +22,12 @@ export default function Slider({slides}) {
     </div>
   ) : (
     <div className='carousel'>
+      <img src = {arrow} alt="arrow" className="arrow-left" onClick={() => prevSlide()} />
+      <img src = {arrow} alt="arrow" className="arrow-right" onClick={() => nextSlide()} />
       {
         slides.map((slide, index) => {
           return (
             <div key={index} className="slide-image">
-              <img src = {arrow} alt="arrow" className="arrow-left" onClick={() => prevSlide()} />
-              <img src = {arrow} alt="arrow" className="arrow-right" onClick={() => nextSlide()} />
               {index === current && (
                 <img src={slide} alt="" />
               )}

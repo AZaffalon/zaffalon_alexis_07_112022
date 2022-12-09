@@ -1,4 +1,4 @@
-.slide-image {
+.carousel {
   position: relative;
 }
 
@@ -16,6 +16,7 @@
   width: 2em;
   position: absolute;
   top: 50%;
+  z-index: 1;
 }
 
 .arrow-left {
