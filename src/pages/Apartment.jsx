@@ -1,15 +1,15 @@
 // React
 import React, { useState, useEffect} from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 // Components
 import Tag from "../components/Tag";
 import Dropdown from "../components/Dropdown";
 import Slider from "../components/Slider";
 import Loader from "../components/Loader";
 // Styles and images
-import '../assets/styles/apartment.css'
-import starGrey from '../assets/images/star-grey.svg'
-import starRed from '../assets/images/star-red.svg'
+import '../assets/styles/apartment.css';
+import starGrey from '../assets/images/star-grey.svg';
+import starRed from '../assets/images/star-red.svg';
 
 /**
  * Fetch datas from datas.json and find location with id from url params
@@ -21,6 +21,7 @@ function setFetcherApartment() {
   
   const [apartment, setApartment] = useState(null) 
   const [loading, setLoading] = useState(true)
+  const [redirect, setRedirect] = useState(false)
   
   useEffect(() => {
     fetch("../datas.json")
@@ -31,7 +32,13 @@ function setFetcherApartment() {
         throw response
       })
       .then(data => {
-        setApartment(data.find(a => a.id === params.id))
+        const findData = data.find(a => a.id === params.id)
+        if (findData) {
+          setApartment(findData)
+        } else {
+          console.error("Data not found")
+          setRedirect(true)
+        }
       })
       .catch(error => {
         console.error("Problem fetching data:", error)
@@ -42,6 +49,7 @@ function setFetcherApartment() {
   }, [])
   return [
     loading,
+    redirect,
     apartment
   ]
 }
@@ -49,7 +57,12 @@ function setFetcherApartment() {
 function Apartment() {
 
   // States returned from setFetcherApartment function
-  const [loading, apartment] = setFetcherApartment()
+  const [loading, redirect, apartment] = setFetcherApartment()
+
+  // redirect to 404 if apartment is null
+  if (redirect) {
+    return <Navigate replace to="/404"/>
+  }
 
   if (loading) { // until 'loading' passes to false => show the loader component
     return <Loader />

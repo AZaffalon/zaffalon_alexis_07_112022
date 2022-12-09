@@ -1,6 +1,6 @@
 // React
 import React, { useState, useEffect } from "react"
-import { Link } from "react-router-dom"
+import { Link, Navigate } from "react-router-dom"
 // Components
 import LocationCard from "../components/LocationCard"
 import Loader from "../components/Loader"
@@ -14,6 +14,7 @@ import '../assets/styles/home.css'
 function setFetcher() {
   const [locations, setLocations] = useState(null) 
   const [loading, setLoading] = useState(true)
+  const [redirect, setRedirect] = useState(false)
 
   useEffect(() => {
     fetch("./datas.json")
@@ -28,18 +29,24 @@ function setFetcher() {
       })
       .catch(error => {
         console.error("Problem fetching data:", error)
+        setRedirect(true)
       })
       .finally(() => {
         setLoading(false)
       })
   }, [])
-  return [ locations, loading ]
+  return [ locations, loading, redirect ]
 }
 
 function Home() {
 
   // States returned from setFetcher function
-  const [locations, loading] = setFetcher()
+  const [locations, loading, redirect] = setFetcher()
+
+    // redirect to 404 if apartment is null
+    if (redirect) {
+      return <Navigate replace to="/404"/>
+    }
   
   if (loading) { // until 'loading' passes to false => show the loader component
     return <Loader />
