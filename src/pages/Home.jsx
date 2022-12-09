@@ -1,6 +1,6 @@
 // React
 import React, { useState, useEffect } from "react"
-import { Link, Navigate } from "react-router-dom"
+import { Navigate } from "react-router-dom"
 // Components
 import LocationCard from "../components/LocationCard"
 import Loader from "../components/Loader"
@@ -60,13 +60,7 @@ function Home() {
       </div>
       <section className="locations-list background--grey">
         { locations.map(location => {
-            return (
-              <Link to={`/fiche-logement/${location.id}`} className="location-link" key={location.id}>
-                {
-                  <LocationCard backgroundImage={location.cover} titleValue={location.title}/>
-                }
-              </Link>
-            )
+            return <LocationCard locationId={location.id} backgroundImage={location.cover} titleValue={location.title} key={`location_${location.id}`}/>
           }) 
         }
       </section>
