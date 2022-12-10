@@ -2,12 +2,13 @@
   position: relative;
 }
 
-.slide-image img:not(.arrow-left, .arrow-right) {
+.slide-image img {
   object-fit: cover;
   width: 100%;
   max-height: 415px;
   min-height: 255px;
   border-radius: 10px;
+  background-color: grey;
 }
 
 .arrow-left,
