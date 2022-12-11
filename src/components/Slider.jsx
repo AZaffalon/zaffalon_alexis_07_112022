@@ -42,7 +42,12 @@ export default function Slider({slides}) {
           return (
             <div key={image} className="slide-image">
               {index === current && (
-                <img src={image} alt="" />
+                <>
+                  <img src={image} alt="" />
+                  <span className='current-img-counter'>
+                    {`${current + 1}/${length}`}
+                  </span>
+                </>
               )}
             </div>
           );

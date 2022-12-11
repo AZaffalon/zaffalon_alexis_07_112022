@@ -29,9 +29,28 @@
   transform: rotate(-90deg);
 }
 
+.current-img-counter {
+  color: #fff;
+  position: absolute;
+  left: 50%;
+  bottom: 6%;
+  font-size: 1.5em;
+  line-height: 26px;
+  display: none;
+}
+
 @media screen and (min-width: 1080px) {
   .slide-image img {
     height: 415px;
     border-radius: 25px;
+  }
+
+  .arrow-left,
+  .arrow-right {
+    width: 4em;
+  }
+
+  .current-img-counter {
+    display: block;
   }
 }
