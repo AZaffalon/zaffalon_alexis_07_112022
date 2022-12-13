@@ -19,6 +19,11 @@
   z-index: 1;
 }
 
+.arrow-left:hover,
+.arrow-right:hover {
+  cursor: pointer;
+}
+
 .arrow-left {
   left: 0;
   transform: rotate(90deg);

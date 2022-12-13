@@ -11,7 +11,7 @@ import '../assets/styles/home.css'
  * Fetch datas from datas.json
  * return state of setLocations (json) an setLoading (boolean)
  */
-function setFetcher() {
+function useSetFetcher() {
   const [locations, setLocations] = useState(null) 
   const [loading, setLoading] = useState(true)
   const [redirect, setRedirect] = useState(false)
@@ -41,7 +41,7 @@ function setFetcher() {
 function Home() {
 
   // States returned from setFetcher function
-  const [locations, loading, redirect] = setFetcher()
+  const [locations, loading, redirect] = useSetFetcher()
 
     // redirect to 404 if apartment is null
     if (redirect) {

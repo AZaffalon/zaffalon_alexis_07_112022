@@ -15,7 +15,7 @@ import starRed from '../assets/images/star-red.svg';
  * Fetch datas from datas.json and find location with id from url params
  * return state of setApartment (json) an setLoading (boolean)
  */
-function setFetcherApartment() {
+function useSetFetcherApartment() {
   
   const params = useParams()
   
@@ -57,13 +57,13 @@ function setFetcherApartment() {
 function Apartment() {
 
   // States returned from setFetcherApartment function
-  const [loading, redirect, apartment] = setFetcherApartment()
-
+  const [loading, redirect, apartment] = useSetFetcherApartment()
+  
   // redirect to 404 if apartment is null
   if (redirect) {
     return <Navigate replace to="/404"/>
   }
-
+  
   if (loading) { // until 'loading' passes to false => show the loader component
     return <Loader />
   }
@@ -118,8 +118,8 @@ function Apartment() {
       </div>
 
       <div className="align-dropdown">
-        <Dropdown widthClass={"width-100"} titleValue={"Description"} dropContent={apartment.description}/>
-        <Dropdown widthClass={"width-100"} titleValue={"Équipements"} dropContent={apartment.equipments}/>  
+        <Dropdown widthClass={"width-100"} titleValue={"Description"} dropContent={apartment.description} />
+        <Dropdown widthClass={"width-100"} titleValue={"Équipements"} dropContent={apartment.equipments} isList={apartment.equipments.length > 1 ? true : false}/>  
       </div>
     </div>
   )
