@@ -58,7 +58,21 @@ function Apartment() {
 
   // States returned from setFetcherApartment function
   const [loading, redirect, apartment] = useSetFetcherApartment()
+  const [width, setWidth] = useState(window.innerWidth)
+  const breakpoint = 1080 // className will change before or after 1080px
+
+  /**
+   * Get window's width on resize
+   */
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      setWidth(window.innerWidth)
+    })
+  }, [])
   
+  // Store className to pass in props for the dropdown
+  let widthClass = width < breakpoint ? "full-width" : "half-width"
+
   // redirect to 404 if apartment is null
   if (redirect) {
     return <Navigate replace to="/404"/>
@@ -125,8 +139,8 @@ function Apartment() {
       </div>
 
       <div className="align-dropdown">
-        <Dropdown widthClass={"width-100"} titleValue={"Description"} dropContent={apartment.description} />
-        <Dropdown widthClass={"width-100"} titleValue={"Équipements"} dropContent={apartment.equipments} isList={apartment.equipments.length > 1 ? true : false}/>  
+        <Dropdown widthClass={widthClass} titleValue={"Description"} dropContent={apartment.description} />
+        <Dropdown widthClass={widthClass} titleValue={"Équipements"} dropContent={apartment.equipments} isList={apartment.equipments.length > 1 ? true : false}/>  
       </div>
     </div>
   )

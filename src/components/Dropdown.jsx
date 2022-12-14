@@ -7,7 +7,7 @@ function Dropdown({titleValue, dropContent, widthClass, isList}) {
   const [isOpen, setIsOpen] = useState(false)
 
   return isOpen ? ( //Dropdown is open
-    <div className={`collapse ${widthClass}`}>
+    <div className={`${widthClass}`}>
       <div className="collapse--header" onClick={(e) => setIsOpen(false)}>
         {titleValue}
         <img src = {arrow} alt="arrow" className="arrow-up" />
@@ -31,7 +31,7 @@ function Dropdown({titleValue, dropContent, widthClass, isList}) {
       </div>
     </div>
   ) : ( //Dropdown is closed
-    <div className={`collapse ${widthClass}`}>
+    <div className={`${widthClass}`}>
       <div className="collapse--header" onClick={(e) => setIsOpen(true)}>
         {titleValue}
         <img src = {arrow} alt="arrow" />
