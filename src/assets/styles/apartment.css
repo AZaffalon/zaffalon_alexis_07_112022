@@ -48,6 +48,7 @@ span {
 
 .align-tags {
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
   justify-content: flex-start;
   gap: 10px;
@@ -95,6 +96,7 @@ span {
 
   .container h2 {
     font-size: 3em;
+    line-height: 51px;
   }
 
   .container span {
