@@ -21,7 +21,7 @@
 }
 
 .bckg-img {
-  background-image: url('../images/background_image_home_mobile.jpg');
+  background-image: url('../images/background_image_home_desktop.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -70,10 +70,6 @@
   .bckg-img,
   .slight-opacity {
     height: 224px;
-  }
-
-  .bckg-img {
-    background-image: url('../images/background_image_home_desktop.jpg');
   }
 
   .slogan {
