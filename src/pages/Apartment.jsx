@@ -29,7 +29,7 @@ function useSetFetcherApartment() {
         if(response.ok) {
           return response.json()
         }
-        throw response
+        throw new Error("Network response was not ok")
       })
       .then(data => {
         const findData = data.find(a => a.id === params.id)
@@ -68,8 +68,22 @@ function Apartment() {
     return <Loader />
   }
 
-  // Set i to 0 for tags keys
-  let i = 0;
+  /**
+   * Set an array of boolean used to define if a star is red or grey
+   * true == red
+   * false == grey
+   */
+  const starsLoop = () => {
+    const starsArray = []
+    for (let i = 1; i <= 5; i++) { // We choose 5 here because it's the maximum number of stars we can choose
+      if (i <= apartment.rating) {
+        starsArray.push(true)
+      } else {
+        starsArray.push(false)
+      }
+    }
+    return starsArray
+  } 
 
   return (
     <div className="apartment">
@@ -91,19 +105,12 @@ function Apartment() {
         <div className="wrapper direction"> 
           <div className="star-container grow-1">
             {
-              [...Array(parseInt(apartment.rating))].map(() => {
-                i++ // increment i to 1 for each tag
-                return(
-                  <img src= {starRed} alt="Star red" key={`star_red_${i}`}/>
-                )
-              })
-            }
-            {
-              [...Array(5 - parseInt(apartment.rating))].map(() => {
-                i++ // increment i to 1 for each tag
-                return(
-                  <img src= {starGrey} alt="Star grey" key={`star_grey_${i}`}/>
-                )
+              starsLoop().map((star, index) => {
+                if (star) {
+                  return <img src= {starRed} alt="Star red" key={`star_red_${index}`}/>
+                } else {
+                  return <img src= {starGrey} alt="Star grey" key={`star_grey_${index}`}/>
+                }
               })
             }
           </div>
