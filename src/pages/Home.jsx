@@ -29,6 +29,7 @@ function useSetFetcher() {
       })
       .catch(error => {
         console.error("Problem fetching data:", error)
+        alert('Il y a eu un problème, vous allez être redirigé')
         setRedirect(true)
       })
       .finally(() => {
