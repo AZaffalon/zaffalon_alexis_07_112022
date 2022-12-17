@@ -33,7 +33,12 @@ function useSetFetcherApartment() {
       })
       .then(data => {
         const findData = data.find(a => a.id === params.id)
-        setApartment(findData)
+        if (findData) {
+          setApartment(findData)
+        } else {
+          alert('Données introuvable, vous allez être redirigé')
+          setRedirect(true)
+        }
       })
       .catch(error => {
         console.error("Problem fetching Data: ", error)
